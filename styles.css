@@ -1,0 +1,121 @@
+/* Global styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* iPhone-like aesthetic font */
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Full black background color */
+    color: #fff; /* White text color */
+    display: flex;
+    flex-direction: column; /* Ensure container stacks vertically */
+    min-height: 100vh; /* Minimum height of viewport */
+}
+
+.container {
+    display: flex;
+    flex: 1; /* Take up remaining space */
+    flex-direction: column; /* Ensure container stacks vertically */
+    padding-bottom: 60px; /* Height of the input area */
+}
+
+/* Chat container styles */
+.chat-container {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #000; /* Black background color for chat section */
+    border-radius: 10px;
+    overflow: hidden; /* Ensure rounded corners clip overflow content */
+    border: 1px solid #666; /* Grey border */
+    margin-bottom: 10px; /* Add margin at the bottom */
+}
+
+.chat-header {
+    background-color: #111; /* Dark background color */
+    color: white; /* White text color */
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #444; /* Darker border line */
+}
+
+.chat-window {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse; /* Reverse the order for scrolling to bottom */
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #333; /* Dark grey background color for messages */
+    color: white; /* White text color */
+}
+
+.message {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.user-message {
+    background-color: #555; /* Darker grey background color */
+    color: white; /* White text color */
+    align-self: flex-end; /* Align user messages to the right */
+    margin-bottom: 10px; /* Add some space between messages */
+}
+
+.bot-message {
+    background-color: #555; /* Darker grey background color */
+    color: white; /* White text color */
+    align-self: flex-start; /* Align bot messages to the left */
+    margin-bottom: 10px; /* Add some space between messages */
+}
+
+.input-area {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    background-color: #111; /* Dark background color */
+    padding: 15px; /* Add padding */
+    border-top: 1px solid #444; /* Darker border line */
+    border-bottom-left-radius: 20px; /* Curved edges for left side */
+    border-bottom-right-radius: 20px; /* Curved edges for right side */
+    position: fixed; /* Fix the input area at the bottom */
+    bottom: 0; /* Align it to the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    width: 90%; /* Take up 90% of the viewport width */
+    max-width: 600px; /* Maximum width to prevent stretching */
+    z-index: 1000; /* Ensure it's above other content */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for depth */
+    backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px; /* Increase padding for a more comfortable typing experience */
+    border: none; /* Remove border for input field */
+    outline: none;
+    font-size: 16px;
+    color: #fff; /* White text color */
+    background-color: transparent; /* Transparent background */
+    border-radius: 20px; /* Rounded input field */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Add a subtle glow effect */
+    margin-top: 10px; /* Add margin at the top */
+}
+
+button {
+    padding: 12px 25px; /* Increase padding for a more clickable button */
+    border: none;
+    background-color: #007bff; /* Default blue color */
+    color: #fff; /* White text color */
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 20px; /* Rounded button */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
