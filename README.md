@@ -23,7 +23,7 @@ To run the Yudi chat application locally:
 
 1. Clone this repository:
    ```
-   gitclone https://github.com/KyleXelamy/Yudee-GPT.git
+   gitclone https://github.com/KyleXelamy/Yudi-GPT.git
    ```
 2. Open `index.html` in your web browser.
 
