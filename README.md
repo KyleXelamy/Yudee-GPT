@@ -19,7 +19,7 @@ Welcome to Yudi, a simple chat application powered by JavaScript and CSS. Yudi a
 
 ## Getting Started
 
-To run the Kyle-GPT chat application locally:
+To run the Yudi chat application locally:
 
 1. Clone this repository:
    ```
