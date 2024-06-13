@@ -1,0 +1,341 @@
+/* Global styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #222; /* Darker background */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-bottom: 60px;
+}
+
+/* Chat container styles */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #333; /* Darker chat container */
+    border-radius: 10px;
+    overflow: hidden;
+    border: none; /* No border */
+    margin-bottom: 10px;
+}
+
+.chat-header {
+    background-color: #111;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+    display: flex;
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.chat-header h2 {
+    margin: 0;
+    font-size: 24px; /* Adjust header font size */
+}
+
+.theme-toggle {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.theme-toggle:hover {
+    background-color: #0056b3;
+}
+
+.chat-window {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+}
+
+.message {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.user-message {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
+.bot-message {
+    background-color: #28a745;
+    color: white;
+    align-self: flex-start;
+    margin-bottom: 10px;
+}
+
+/* Error toast */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+    animation: slideInRight 0.5s ease;
+}
+
+.toast.show {
+    display: block;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* Input area */
+.input-area {
+    display: flex;
+    flex-direction: column; /* Adjust to column for additional elements */
+    justify-content: flex-end; /* Align at the bottom */
+    align-items: center; /* Center items */
+    background-color: #111;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #333; /* Darker input area */
+    border-radius: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+    background-color: transparent;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    margin-top: 10px;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    margin-left: 10px; /* Add margin for spacing */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.feedback-buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.feedback-buttons .emoji {
+    font-size: 24px; /* Adjust as needed */
+    cursor: pointer;
+    margin: 0 5px;
+    transition: transform 0.4s ease-out; /* Smooth scale transition */
+}
+
+.feedback-buttons .emoji:hover {
+    transform: scale(1.4); /* Scale up on hover */
+}
+
+/* Animation for selected emoji */
+@keyframes bounceInOut {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Bounce animation */
+    }
+}
+
+.feedback-buttons .emoji.selected {
+    animation: bounceInOut 0.5s;
+}
+
+/* Additional styles */
+.input-container button {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%; /* Rounded button */
+    font-size: 20px; /* Larger button icon */
+    padding: 12px;
+    margin-left: 10px; /* Spacing between input and button */
+}
+
+.input-container button:hover {
+    background-color: #0056b3;
+}
+
+.clear-history {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.clear-history:hover {
+    background-color: #c82333;
+}
+
+/* Voice input button */
+#voiceInputButton {
+    background-color: #28a745; /* Green color for voice input */
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#voiceInputButton:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Media queries for responsive design */
+@media only screen and (max-width: 768px) {
+    .input-area {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .chat-window {
+        max-height: 60vh;
+    }
+    
+    .message {
+        max-width: 90%;
+    }
+    
+    .input-container button {
+        padding: 10px;
+        font-size: 14px; /* Adjusted font size for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .chat-container {
+        padding: 10px;
+    }
+    
+    .chat-header h2 {
+        font-size: 20px;
+    }
+    
+    .input-container button {
+        padding: 10px;
+        font-size: 14px; /* Adjusted font size for smaller screens */
+    }
+    
+    /* Accessibility improvements */
+    button,
+    .theme-toggle,
+    .clear-history {
+        /* Ensure elements are easily navigable via keyboard */
+        outline: none;
+    }
+    
+    button,
+    .theme-toggle,
+    .clear-history,
+    input[type="text"] {
+        /* Improve contrast ratio for readability */
+        border: 1px solid transparent; /* Ensure focus styles are visible */
+    }
+}
+
+/* Styles for message editing and deletion */
+.message .edit-button,
+.message .delete-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.message .edit-button:hover,
+.message .delete-button:hover {
+    background-color: #c82333;
+}
+
+.message .edit-button {
+    background-color: #ffc107; /* Yellow for edit button */
+}
+
+.message .edit-button:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+}
+
+.message .delete-button {
+    background-color: #dc3545; /* Red for delete button */
+}
+
+.message .delete-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
